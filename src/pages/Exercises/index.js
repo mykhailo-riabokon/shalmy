@@ -2,6 +2,8 @@ import React from "react";
 import { Spin } from "antd";
 import Exercise from "../../components/Exercise";
 
+import "./index.css";
+
 class Exercises extends React.Component {
   state = {
     list: [],
@@ -25,7 +27,7 @@ class Exercises extends React.Component {
 
   render() {
     return (
-      <div className="page-container">
+      <div className="page-container exercises">
         <h1>List of all exercises</h1>
         <Spin spinning={this.state.isLoading} />
         <div className="list">

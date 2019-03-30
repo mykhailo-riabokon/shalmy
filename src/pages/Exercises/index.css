@@ -1,0 +1,12 @@
+.exercises .list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.exercises .list * {
+  /* margin-bottom: 20px;
+  margin-right: 20px; */
+  margin-right: 10px;
+}
