@@ -22,7 +22,7 @@ class ExercisePlace extends React.Component {
     return (
       <Form>
         <Form.Item label="Place">
-          {this.props.form.getFieldDecorator("reason", {
+          {this.props.form.getFieldDecorator("place", {
             rules: [{ required: true }]
           })(
             <Radio.Group>

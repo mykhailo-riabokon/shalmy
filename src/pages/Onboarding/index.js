@@ -46,10 +46,10 @@ class Onboarding extends React.Component {
   get steps() {
     return [
       <ExerciseReasonStep onSubmit={this.nextStep} />,
-      <ExercisePlaceStep />,
-      <ExerciseObjectsStep />,
-      <ExerciseLocationStep />,
-      <UserNameStep />
+      <ExercisePlaceStep onSubmit={this.nextStep} />,
+      <ExerciseObjectsStep onSubmit={this.nextStep} />,
+      <ExerciseLocationStep onSubmit={this.nextStep} />,
+      <UserNameStep onSubmit={this.nextStep} />
     ];
   }
 
