@@ -15,7 +15,12 @@ const objects = [
   "Bed",
   "Chair",
   "Wall",
-  "Floor"
+  "Floor",
+  "Paper plate",
+  "Pack of potatoes",
+  "Bag of onions",
+  "Your baby",
+  "Music speaker"
 ];
 
 class Backoffice extends React.Component {

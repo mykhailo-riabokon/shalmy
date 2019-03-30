@@ -43,7 +43,7 @@ class ExerciseObjects extends React.Component {
   render() {
     return (
       <Form>
-        <Form.Item label="Objects">
+        <Form.Item label="What would you like to exercise with?">
           {this.props.form.getFieldDecorator("objects", {
             rules: [{ required: true }]
           })(<Checkbox.Group options={options} />)}

@@ -21,15 +21,15 @@ class ExercisePlace extends React.Component {
   render() {
     return (
       <Form>
-        <Form.Item label="Place">
+        <Form.Item label="Where would you like to exercise?">
           {this.props.form.getFieldDecorator("place", {
             rules: [{ required: true }]
           })(
             <Radio.Group>
-              <Radio value={1}>A</Radio>
-              <Radio value={2}>B</Radio>
-              <Radio value={3}>C</Radio>
-              <Radio value={4}>D</Radio>
+              <Radio value={1}>At home</Radio>
+              <Radio value={2}>Indoor sports halls</Radio>
+              <Radio value={3}>Anywhere outdoors</Radio>
+              <Radio value={4}>Does not really matter</Radio>
             </Radio.Group>
           )}
           <Button type="primary" onClick={this.onSubmit}>

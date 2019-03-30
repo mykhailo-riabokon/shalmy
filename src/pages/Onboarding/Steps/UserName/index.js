@@ -21,7 +21,7 @@ class UserName extends React.Component {
   render() {
     return (
       <Form>
-        <Form.Item label="What's your name?">
+        <Form.Item label="What is your name?">
           {this.props.form.getFieldDecorator("name", {
             rules: [{ required: true }]
           })(<Input placeholder="Your name" />)}

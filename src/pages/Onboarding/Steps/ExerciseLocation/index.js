@@ -21,7 +21,7 @@ class ExerciseLocation extends React.Component {
   render() {
     return (
       <Form>
-        <Form.Item label="Location">
+        <Form.Item label="Which city do you live in?">
           {this.props.form.getFieldDecorator("location", {
             rules: [{ required: true }]
           })(<Input placeholder="location" />)}
