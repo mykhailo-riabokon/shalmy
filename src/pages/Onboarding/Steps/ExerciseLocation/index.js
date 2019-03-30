@@ -24,7 +24,7 @@ class ExerciseLocation extends React.Component {
         <Form.Item label="Which city do you live in?">
           {this.props.form.getFieldDecorator("location", {
             rules: [{ required: true }]
-          })(<Input placeholder="location" />)}
+          })(<Input placeholder="Helsinki" />)}
           <Button type="primary" onClick={this.onSubmit}>
             Next
           </Button>

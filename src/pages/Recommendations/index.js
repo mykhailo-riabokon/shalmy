@@ -60,7 +60,12 @@ class Recommendations extends React.Component {
       const actions = [<Icon type="caret-right" />];
 
       if (item.videoUrl) {
-        actions.push(<Icon type="youtube" />);
+        actions.push(
+          <Icon
+            type="youtube"
+            onClick={() => window.open(item.videoUrl, "_blank")}
+          />
+        );
       }
 
       return (
@@ -105,7 +110,7 @@ class Recommendations extends React.Component {
 
     return (
       <div className="page-container recommendations-container">
-        <div className="page__title">Personalize recommendations:</div>
+        <div className="page__title">Personalized recommendations:</div>
         <div className={className}>{this.results}</div>
       </div>
     );
