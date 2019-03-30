@@ -26,20 +26,15 @@ class Onboarding extends React.Component {
     const nextStep = this.state.currentStep + 1;
 
     if (nextStep === this.steps.length) {
-      alert("done");
+      this.props.history.push("/recommendations");
     } else {
-      this.setState(
-        {
-          currentStep: nextStep,
-          data: {
-            ...this.state.data,
-            data
-          }
-        },
-        () => {
-          console.log(this.state.data);
+      this.setState({
+        currentStep: nextStep,
+        data: {
+          ...this.state.data,
+          data
         }
-      );
+      });
     }
   };
 
