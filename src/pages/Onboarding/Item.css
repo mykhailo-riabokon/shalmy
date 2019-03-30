@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.Item {
+    margin: 50px auto;
+    /* text-align: center; */
+    background-color: #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 500px;
+    height: 300px;
+}
+
+  .Item-text {
+      /* display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; */
+      width: 100%;
+      text-align: center;
+      vertical-align: middle;
+      margin: 0 0;
+      font-family: 'Roboto', sans-serif;
+      color: #000;
+  }
+
+.Question {
+    margin: 0;
+    padding: 0.5rem 2.5rem 1.5rem 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #000;
+}
+
+.Answers {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 1.5rem 2.5rem 1.5rem 5rem;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: left;
+    color: #000;
+}
+
+.Answers-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.answerOption {
+    padding: 10px;
+  }
+  
+  .answerOption:hover {
+    background-color: #f5f5f5;
+    border-radius: 40px;
+  }
