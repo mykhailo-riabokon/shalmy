@@ -1,12 +1,3 @@
-.recommendations-container {
-  display: flex;
-  flex-direction: column;
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px
-}
-
 .recommendations-container .results {
   display: flex;
   flex-direction: row;

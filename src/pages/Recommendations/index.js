@@ -32,7 +32,7 @@ const createDescription = card => {
 class Recommendations extends React.Component {
   render() {
     return (
-      <div className="recommendations-container">
+      <div className="page-container recommendations-container">
         <h1>Recommendations</h1>
         <div className="results">
           {cards.map(card => (
