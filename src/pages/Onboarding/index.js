@@ -14,17 +14,6 @@ class Onboarding extends React.Component {
     data: {}
   };
 
-  handlePaginationClick(direction) {
-    let nextItem = this.state.currentItem;
-
-    // Increment nextPage if direction variable is next, otherwise decrement it
-    nextItem = direction === "next" ? nextItem + 1 : nextItem - 1;
-
-    // Call function inside setState's callback
-    // Because we have to make sure first page state is updated
-    this.setState({ currentItem: nextItem });
-  }
-
   nextStep = data => {
     const nextStep = this.state.currentStep + 1;
 
@@ -35,7 +24,7 @@ class Onboarding extends React.Component {
         currentStep: nextStep,
         data: {
           ...this.state.data,
-          data
+          ...data
         }
       });
     }
