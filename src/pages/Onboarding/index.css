@@ -1,4 +1,12 @@
-.content {
+/* .content {
     text-align: center;
     margin: 0 0;
+} */
+
+.onboarding-page {
+    padding-top: 50px;
+}
+
+.ant-steps {
+    margin-bottom: 20px;
 }

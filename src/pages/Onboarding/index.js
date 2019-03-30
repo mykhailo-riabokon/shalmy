@@ -6,6 +6,8 @@ import ExerciseLocationStep from "./Steps/ExerciseLocation";
 import ExercisePlaceStep from "./Steps/ExercisePlace";
 import UserNameStep from "./Steps/UserName";
 
+import "./index.css";
+
 class Onboarding extends React.Component {
   state = {
     currentStep: 0,
@@ -51,8 +53,8 @@ class Onboarding extends React.Component {
 
   render() {
     return (
-      <div className="content">
-        <Steps size="small" current={this.state.currentStep}>
+      <div className="onboarding-page">
+        <Steps className="steps" size="small" current={this.state.currentStep}>
           {this.steps.map((step, index) => (
             <Steps.Step key={index} title={step.title} />
           ))}
