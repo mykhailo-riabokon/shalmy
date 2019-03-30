@@ -1,0 +1,21 @@
+.page-container.recommendations-container.detils-container .results.results__not-empty {
+  align-items: flex-start;
+}
+
+.details-container {
+  display: flex;
+  margin-top: 50px
+}
+
+.detils-container .img {
+  background-position: center;
+  height: 400px;
+  min-width: 400px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.detils-container .title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
