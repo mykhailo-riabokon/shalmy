@@ -1,10 +1,29 @@
 .recommendations-container .results {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-.recommendations-container .results .ant-card {
+.recommendations-container .results.results__not-empty {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 20px;
+}
+
+.recommendations-container .results .list-item {
   margin-bottom: 10px;
   margin-right: 10px;
+}
+
+.recommendations-container .results .list-item--container {
+  text-decoration: none;
+}
+
+.recommendations-container .results .list-item .img {
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

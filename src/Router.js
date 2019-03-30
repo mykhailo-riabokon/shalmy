@@ -20,11 +20,12 @@ class Router extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route
+            exact
             path="/recommendations"
             render={withBaseLayout(Recommendations)}
           />
-          <Route path="/backoffice" component={Backoffice} />
-          <Route path="/exercises" component={Exercises} />
+          <Route exact path="/backoffice" component={Backoffice} />
+          <Route exact path="/exercises" component={Exercises} />
           <Route path="/" component={Onboarding} />
         </Switch>
       </BrowserRouter>
