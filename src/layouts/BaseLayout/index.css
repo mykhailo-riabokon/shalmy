@@ -1,0 +1,32 @@
+.base-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.base-layout .header {
+  height: 50px;
+  width: 100%;
+  display: flex;
+}
+
+.base-layout .header .logo {
+  display: flex;
+  width: 200px;
+  align-items: center;
+}
+
+.base-layout .header .logo .icon {
+  background-image: url('./logo.svg');
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+
+.base-layout .header .logo .text {
+  line-height: 50px;
+  display: none;
+}
