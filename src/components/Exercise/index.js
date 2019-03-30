@@ -4,13 +4,8 @@ import { Card } from "antd";
 const createDescription = exercise => {
   return (
     <div className="exercise-description">
+      <p className="duration">Duration: {exercise.duration || ""}</p>
       <p className="description">{exercise.description || ""}</p>
-      <p className="benefits">
-        Benefits: {exercise.benefits && exercise.benefits.join(", ")}
-      </p>
-      <p className="duration">
-        Duration (in minutes): {exercise.duration || ""}
-      </p>
     </div>
   );
 };

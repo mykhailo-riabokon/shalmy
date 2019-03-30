@@ -1,16 +1,21 @@
 import React from "react";
 import { Form, Input, Select, Button, message } from "antd";
 
-const benefits = [
-  "benfit 1",
-  "benefit 2",
-  "Sharon please provide a list of benefits"
-];
-
 const objects = [
-  "object 1",
-  "object 2",
-  "Sharon please provide a list of benefits"
+  "Broom",
+  "Towel",
+  "Bathrobe tie",
+  "Bags of oranges or fruits (at least 2)",
+  "Cans of soup or beans (at least 2)",
+  "Paper towel roll",
+  "Stairs",
+  "Basketball or soccer ball",
+  "Another human",
+  "Television",
+  "Bed",
+  "Chair",
+  "Wall",
+  "Floor"
 ];
 
 class Backoffice extends React.Component {
@@ -78,19 +83,6 @@ class Backoffice extends React.Component {
             </Form.Item>
             <Form.Item label="Video URL">
               {getFieldDecorator("videoUrl")(<Input placeholder="Video url" />)}
-            </Form.Item>
-            <Form.Item label="Benefits">
-              {getFieldDecorator("benefits", {
-                rules: [{ required: true }]
-              })(
-                <Select mode="multiple">
-                  {benefits.map((benefit, index) => (
-                    <Select.Option key={index} value={benefit}>
-                      {benefit}
-                    </Select.Option>
-                  ))}
-                </Select>
-              )}
             </Form.Item>
             <Form.Item label="Duration">
               {getFieldDecorator("duration", {
