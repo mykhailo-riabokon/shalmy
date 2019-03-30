@@ -8,11 +8,15 @@
 }
 
 .detils-container .img {
-  background-position: center;
+  background-position: top;
   height: 400px;
   min-width: 400px;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.detils-container .info {
+  margin-left: 10px;
 }
 
 .detils-container .title {
