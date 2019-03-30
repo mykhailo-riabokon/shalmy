@@ -1,12 +1,5 @@
 import React from "react";
-import { Form, Input, Select } from "antd";
-
-// title
-// description
-// image / gif
-// benefits:
-// duration
-// object
+import { Form, Input, Select, Button, message } from "antd";
 
 const benefits = [
   "benfit 1",
@@ -21,6 +14,44 @@ const objects = [
 ];
 
 class Backoffice extends React.Component {
+  state = {
+    isAdding: false
+  };
+
+  validate = () => {
+    return new Promise(resolve => {
+      this.props.form.validateFields((errors, values) => {
+        resolve({ errors, values });
+      });
+    });
+  };
+
+  onItemAdded = () => {
+    message.success("Item was added");
+
+    this.setState({ isAdding: false });
+  };
+
+  onItemError = () => {
+    message.error("Something went wrong");
+
+    this.setState({ isAdding: false });
+  };
+
+  submit = async () => {
+    const { errors, values } = await this.validate();
+
+    if (!errors) {
+      this.setState({ isAdding: true });
+
+      window.firestore
+        .collection("exercises")
+        .add(values)
+        .then(this.onItemAdded)
+        .catch(this.onItemError);
+    }
+  };
+
   render() {
     const { getFieldDecorator } = this.props.form;
 
@@ -29,7 +60,7 @@ class Backoffice extends React.Component {
         <h1>Backoffice</h1>
         <div className="new-exercice">
           <h3>Add new exercice</h3>
-          <Form>
+          <Form onSubmit={e => e.preventDefault()}>
             <Form.Item label="Title">
               {getFieldDecorator("title", {
                 rules: [{ required: true }]
@@ -46,9 +77,7 @@ class Backoffice extends React.Component {
               })(<Input placeholder="Image url" />)}
             </Form.Item>
             <Form.Item label="Video URL">
-              {getFieldDecorator("videoUrl", {
-                rules: [{ required: true }]
-              })(<Input placeholder="Video url" />)}
+              {getFieldDecorator("videoUrl")(<Input placeholder="Video url" />)}
             </Form.Item>
             <Form.Item label="Benefits">
               {getFieldDecorator("benefits", {
@@ -81,6 +110,13 @@ class Backoffice extends React.Component {
                 </Select>
               )}
             </Form.Item>
+            <Button
+              type="primary"
+              onClick={this.submit}
+              loading={this.state.isAdding}
+            >
+              Add new exercice
+            </Button>
           </Form>
         </div>
       </div>
