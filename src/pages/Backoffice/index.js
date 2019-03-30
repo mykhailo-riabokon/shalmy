@@ -46,7 +46,7 @@ class Backoffice extends React.Component {
   submit = async () => {
     const { errors, values } = await this.validate();
 
-    if (!errors) {
+    if (!errors && "firestore" in window) {
       this.setState({ isAdding: true });
 
       window.firestore
