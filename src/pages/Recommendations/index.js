@@ -1,32 +1,58 @@
 import React from "react";
 import { Empty, Spin, Card, Icon } from "antd";
 import { Link } from "react-router-dom";
+import { UserDataContext } from "../../context";
 
 import "./index.css";
 
 class Recommendations extends React.Component {
+  static contextType = UserDataContext;
+
   state = {
     list: [],
     isLoading: false,
     isLoaded: false
   };
 
-  onLoaded = res => {
-    const list = res.docs.map(item => ({
-      ...item.data(),
-      id: item.id
-    }));
+  onLoaded = responses => {
+    const allItems = responses.reduce((memo, item) => {
+      return memo.concat(
+        item.docs.map(item => ({
+          ...item.data(),
+          id: item.id
+        }))
+      );
+    }, []);
+    const uniqueItems = allItems.reduce((memo, item) => {
+      const inList = memo.find(memoItem => memoItem.id === item.id);
 
-    this.setState({ list, isLoading: false, isLoaded: true });
+      if (!inList) {
+        memo.push(item);
+      }
+
+      return memo;
+    }, []);
+
+    this.setState({ list: uniqueItems, isLoading: false, isLoaded: true });
+  };
+
+  createQueries = () => {
+    return this.context.userData.objects.map(object => {
+      return window.firestore
+        .collection("exercises")
+        .where("objects", "array-contains", object)
+        .get();
+    });
   };
 
   componentDidMount() {
-    this.setState({ isLoading: true });
+    if (this.context.userData.objects) {
+      this.setState({ isLoading: true });
 
-    window.firestore
-      .collection("exercises")
-      .get()
-      .then(this.onLoaded);
+      Promise.all(this.createQueries()).then(this.onLoaded);
+    } else {
+      this.props.history.push("/");
+    }
   }
 
   createResults = () => {
