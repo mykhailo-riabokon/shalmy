@@ -15,7 +15,12 @@ const options = [
   "Bed",
   "Chair",
   "Wall",
-  "Floor"
+  "Floor",
+  "Paper plate",
+  "Pack of potatoes",
+  "Bag of onions",
+  "Your baby",
+  "Music speaker"
 ];
 
 class ExerciseObjects extends React.Component {
