@@ -5,10 +5,13 @@ import ExerciseObjectsStep from "./Steps/ExerciseObjects";
 import ExerciseLocationStep from "./Steps/ExerciseLocation";
 import ExercisePlaceStep from "./Steps/ExercisePlace";
 import UserNameStep from "./Steps/UserName";
+import { UserDataContext } from "../../context";
 
 import "./index.css";
 
 class Onboarding extends React.Component {
+  static contextType = UserDataContext;
+
   state = {
     currentStep: 0,
     data: {}
@@ -18,7 +21,18 @@ class Onboarding extends React.Component {
     const nextStep = this.state.currentStep + 1;
 
     if (nextStep === this.steps.length) {
-      this.props.history.push("/recommendations");
+      this.setState(
+        {
+          data: {
+            ...this.state.data,
+            ...data
+          }
+        },
+        () => {
+          this.context.udpateData(this.state.data);
+          this.props.history.push("/recommendations");
+        }
+      );
     } else {
       this.setState({
         currentStep: nextStep,

@@ -1,17 +1,22 @@
 import React from "react";
+import { UserDataContext } from "../../../context";
 
-function Header() {
-  const name = "Shamly user name";
+class Header extends React.Component {
+  static contextType = UserDataContext;
 
-  return (
-    <div className="header">
-      <div className="logo">
-        <div className="icon" />
-        <div className="text">shalmy</div>
+  render() {
+    const { name } = this.context.userData;
+
+    return (
+      <div className="header">
+        <div className="logo">
+          <div className="icon" />
+          <div className="text">shalmy</div>
+        </div>
+        {name && <div className="user-name">{name}</div>}
       </div>
-      {name && <div className="user-name">{name}</div>}
-    </div>
-  );
+    );
+  }
 }
 
 export default Header;
