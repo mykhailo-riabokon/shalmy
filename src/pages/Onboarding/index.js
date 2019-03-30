@@ -1,42 +1,62 @@
 import React from "react";
-import Pagination from './Pagination';
-import Item from "./Item";
-import './index.css';
+import ExerciseReasonStep from "./Steps/ExerciseReason";
+import ExerciseObjectsStep from "./Steps/ExerciseObjects";
+import ExerciseLocationStep from "./Steps/ExerciseLocation";
+import ExercisePlaceStep from "./Steps/ExercisePlace";
+import UserNameStep from "./Steps/UserName";
 
 class Onboarding extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      currentItem: 1,
-      totalItems: 0,
-    }
-
-    this.handlePaginationClick = this.handlePaginationClick.bind(this);
-  }
+  state = {
+    currentStep: 0,
+    data: {}
+  };
 
   handlePaginationClick(direction) {
     let nextItem = this.state.currentItem;
 
     // Increment nextPage if direction variable is next, otherwise decrement it
-    nextItem = direction === 'next' ? nextItem + 1 : nextItem - 1;
+    nextItem = direction === "next" ? nextItem + 1 : nextItem - 1;
 
     // Call function inside setState's callback
     // Because we have to make sure first page state is updated
-    this.setState({ currentItem: nextItem }, () => {
-      
-    });
+    this.setState({ currentItem: nextItem });
+  }
+
+  nextStep = data => {
+    const nextStep = this.state.currentStep + 1;
+
+    if (nextStep === this.steps.length) {
+      alert("done");
+    } else {
+      this.setState(
+        {
+          currentStep: nextStep,
+          data: {
+            ...this.state.data,
+            data
+          }
+        },
+        () => {
+          console.log(this.state.data);
+        }
+      );
+    }
+  };
+
+  get steps() {
+    return [
+      <ExerciseReasonStep onSubmit={this.nextStep} />,
+      <ExercisePlaceStep />,
+      <ExerciseObjectsStep />,
+      <ExerciseLocationStep />,
+      <UserNameStep />
+    ];
   }
 
   render() {
-    const { currentItem, totalItems } = this.state;
-
     return (
       <div className="content">
-        <Item
-          currentItem={currentItem}
-          totalItems={totalItems}
-        />
+        {this.steps[this.state.currentStep]}
         {/* <Item
           currentItem={currentItem}
           totalItems={totalItems}
@@ -45,16 +65,8 @@ class Onboarding extends React.Component {
           currentItem={currentItem}
           totalItems={totalItems}
         /> */}
-
-        <Pagination
-          currentItem={currentItem}
-          totalItems={totalItems}
-          handlePaginationClick={this.handlePaginationClick}
-        />
-        Place to add steps
       </div>
     );
-      
   }
 }
 

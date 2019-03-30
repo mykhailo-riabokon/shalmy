@@ -1,0 +1,44 @@
+import React from "react";
+import { Form, Radio, Button } from "antd";
+
+class ExerciseReason extends React.Component {
+  validate = () => {
+    return new Promise(resolve => {
+      this.props.form.validateFields((errors, values) => {
+        resolve({ errors, values });
+      });
+    });
+  };
+
+  onSubmit = async () => {
+    const { errors, values } = await this.validate();
+
+    if (!errors) {
+      this.props.onSubmit(values);
+    }
+  };
+
+  render() {
+    return (
+      <Form>
+        <Form.Item label="Reason">
+          {this.props.form.getFieldDecorator("reason", {
+            rules: [{ required: true }]
+          })(
+            <Radio.Group>
+              <Radio value={1}>A</Radio>
+              <Radio value={2}>B</Radio>
+              <Radio value={3}>C</Radio>
+              <Radio value={4}>D</Radio>
+            </Radio.Group>
+          )}
+          <Button type="primary" onClick={this.onSubmit}>
+            Next
+          </Button>
+        </Form.Item>
+      </Form>
+    );
+  }
+}
+
+export default Form.create()(ExerciseReason);
