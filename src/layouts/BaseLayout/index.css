@@ -30,3 +30,9 @@
   line-height: 50px;
   display: none;
 }
+
+.base-layout .header .user-name {
+  margin-left: auto;
+  align-self: center;
+  margin-left: auto;
+}
