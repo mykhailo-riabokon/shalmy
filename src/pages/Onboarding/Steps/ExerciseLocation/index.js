@@ -34,4 +34,8 @@ class ExerciseLocation extends React.Component {
   }
 }
 
-export default Form.create()(ExerciseLocation);
+const ExerciseLocationForm = Form.create()(ExerciseLocation);
+
+ExerciseLocationForm.title = "Your location";
+
+export default ExerciseLocationForm;

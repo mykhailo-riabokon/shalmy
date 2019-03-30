@@ -32,7 +32,7 @@ class Router extends React.Component {
           />
           <Route exact path="/backoffice" component={Backoffice} />
           <Route exact path="/exercises" component={Exercises} />
-          <Route path="/" component={Onboarding} />
+          <Route path="/" render={withBaseLayout(Onboarding)} />
         </Switch>
       </BrowserRouter>
     );

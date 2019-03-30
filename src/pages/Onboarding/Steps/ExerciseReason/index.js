@@ -41,4 +41,8 @@ class ExerciseReason extends React.Component {
   }
 }
 
-export default Form.create()(ExerciseReason);
+const ExerciseReasonForm = Form.create()(ExerciseReason);
+
+ExerciseReasonForm.title = "Reason to exercise";
+
+export default ExerciseReasonForm;

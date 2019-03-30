@@ -34,4 +34,8 @@ class UserName extends React.Component {
   }
 }
 
-export default Form.create()(UserName);
+const UserNameForm = Form.create()(UserName);
+
+UserNameForm.title = "Your name";
+
+export default UserNameForm;

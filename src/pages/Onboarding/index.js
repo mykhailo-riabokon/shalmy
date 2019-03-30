@@ -1,4 +1,5 @@
 import React from "react";
+import { Steps } from "antd";
 import ExerciseReasonStep from "./Steps/ExerciseReason";
 import ExerciseObjectsStep from "./Steps/ExerciseObjects";
 import ExerciseLocationStep from "./Steps/ExerciseLocation";
@@ -51,15 +52,12 @@ class Onboarding extends React.Component {
   render() {
     return (
       <div className="content">
+        <Steps size="small" current={this.state.currentStep}>
+          {this.steps.map((step, index) => (
+            <Steps.Step key={index} title={step.title} />
+          ))}
+        </Steps>
         {this.steps[this.state.currentStep]}
-        {/* <Item
-          currentItem={currentItem}
-          totalItems={totalItems}
-        />
-        <Item
-          currentItem={currentItem}
-          totalItems={totalItems}
-        /> */}
       </div>
     );
   }

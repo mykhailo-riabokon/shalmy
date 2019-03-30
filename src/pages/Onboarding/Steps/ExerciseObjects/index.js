@@ -56,4 +56,8 @@ class ExerciseObjects extends React.Component {
   }
 }
 
-export default Form.create()(ExerciseObjects);
+const ExerciseObjectsForm = Form.create()(ExerciseObjects);
+
+ExerciseObjectsForm.title = "Select some objects";
+
+export default ExerciseObjectsForm;

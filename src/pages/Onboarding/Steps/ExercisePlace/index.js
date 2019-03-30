@@ -41,4 +41,8 @@ class ExercisePlace extends React.Component {
   }
 }
 
-export default Form.create()(ExercisePlace);
+const ExercisePlaceForm = Form.create()(ExercisePlace);
+
+ExercisePlaceForm.title = "Place preference";
+
+export default ExercisePlaceForm;
