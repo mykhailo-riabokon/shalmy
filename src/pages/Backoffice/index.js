@@ -49,9 +49,14 @@ class Backoffice extends React.Component {
     if (!errors && "firestore" in window) {
       this.setState({ isAdding: true });
 
+      const data = {
+        ...values,
+        videoUrl: values.videoUrl || ""
+      };
+
       window.firestore
         .collection("exercises")
-        .add(values)
+        .add(data)
         .then(this.onItemAdded)
         .catch(this.onItemError);
     }
