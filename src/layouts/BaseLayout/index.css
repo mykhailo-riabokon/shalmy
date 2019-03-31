@@ -40,3 +40,13 @@
 .base-layout .content {
   height: calc(100vh - 50px);
 }
+
+.base-layout .header .feedback {
+  line-height: 50px;
+  margin-left: auto;
+}
+
+.base-layout .header .feedback:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
