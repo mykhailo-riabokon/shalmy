@@ -32,7 +32,12 @@ class Details extends React.Component {
           <div className="title">{title}</div>
           <div className="duration">Duration: {duration}</div>
           {videoUrl && (
-            <a className="youtube" href={videoUrl} target="_blank">
+            <a
+              className="youtube"
+              href={videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Watch on <Icon type="youtube" /> YouTube
             </a>
           )}
