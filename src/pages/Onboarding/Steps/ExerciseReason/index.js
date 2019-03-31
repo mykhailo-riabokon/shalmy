@@ -37,6 +37,9 @@ class ExerciseReason extends React.Component {
                 <Radio className="list-item" value={3}>
                   I want to find people to exercise with
                 </Radio>
+                <Radio className="list-item" value={4}>
+                  I want to increase my productivity at my workplace
+                </Radio>
               </div>
             </Radio.Group>
           )}
