@@ -1,5 +1,5 @@
 import React from "react";
-import { Empty, Spin, Card, Icon } from "antd";
+import { Empty, Spin, Icon } from "antd";
 
 import "./index.css";
 
@@ -17,13 +17,25 @@ class Details extends React.Component {
   };
 
   showDetails = () => {
-    const { title, imageUrl, description } = this.state.data;
+    const {
+      title,
+      imageUrl,
+      description,
+      duration,
+      videoUrl
+    } = this.state.data;
 
     return (
       <div className="details-container">
         <div className="img" style={{ backgroundImage: `url(${imageUrl})` }} />
         <div className="info">
           <div className="title">{title}</div>
+          <div className="duration">Duration: {duration}</div>
+          {videoUrl && (
+            <a className="youtube" href={videoUrl} target="_blank">
+              Watch on <Icon type="youtube" /> YouTube
+            </a>
+          )}
           <div className="description">{description}</div>
         </div>
       </div>

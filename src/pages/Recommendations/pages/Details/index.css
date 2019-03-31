@@ -23,3 +23,13 @@
   font-size: 1.5em;
   margin-bottom: 10px;
 }
+
+.detils-container .duration {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.detils-container .youtube {
+  margin-bottom: 10px;
+  display: block;
+}

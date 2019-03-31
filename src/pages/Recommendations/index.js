@@ -60,12 +60,7 @@ class Recommendations extends React.Component {
       const actions = [<Icon type="caret-right" />];
 
       if (item.videoUrl) {
-        actions.push(
-          <Icon
-            type="youtube"
-            onClick={() => window.open(item.videoUrl, "_blank")}
-          />
-        );
+        actions.push(<Icon type="youtube" />);
       }
 
       return (
