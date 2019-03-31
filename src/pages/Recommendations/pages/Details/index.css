@@ -1,15 +1,17 @@
 .page-container.recommendations-container.detils-container .results.results__not-empty {
   align-items: flex-start;
+  justify-content: center;
 }
 
 .details-container {
   display: flex;
+  flex-direction: column;
   margin-top: 50px
 }
 
 .detils-container .img {
   background-position: top;
-  height: 400px;
+  height: 350px;
   min-width: 400px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -17,11 +19,13 @@
 
 .detils-container .info {
   margin-left: 10px;
+  max-width: 700px;
 }
 
 .detils-container .title {
   font-size: 1.5em;
   margin-bottom: 10px;
+  margin-top: 30px;
 }
 
 .detils-container .duration {
