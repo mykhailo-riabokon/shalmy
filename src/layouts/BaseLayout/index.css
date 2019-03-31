@@ -5,6 +5,7 @@
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 
 .base-layout .header {
@@ -49,4 +50,11 @@
 .base-layout .header .feedback:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.base-layout footer {
+  padding: 10px;
+  font-size: 10px;  
+  position: absolute;
+  bottom: 0;
 }
