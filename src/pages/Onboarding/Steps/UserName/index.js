@@ -24,7 +24,8 @@ class UserName extends React.Component {
         <Form.Item label="What is your name?">
           {this.props.form.getFieldDecorator("name", {
             rules: [{ required: true }]
-          })(<Input placeholder="Your name" />)}
+          })(<Input placeholder="Your name" style={{ width: "300px" }} />)}
+          <br />
           <Button type="primary" onClick={this.onSubmit}>
             Done
           </Button>
