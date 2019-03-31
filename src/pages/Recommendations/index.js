@@ -48,7 +48,6 @@ class Recommendations extends React.Component {
   componentDidMount() {
     if (this.context.userData.objects) {
       this.setState({ isLoading: true });
-
       Promise.all(this.createQueries()).then(this.onLoaded);
     } else {
       this.props.history.push("/");
@@ -98,6 +97,7 @@ class Recommendations extends React.Component {
 
   render() {
     let className = "results";
+    const { name } = this.context.userData;
 
     if (this.state.isLoaded && this.state.list.length > 0) {
       className += " results__not-empty";
@@ -105,7 +105,11 @@ class Recommendations extends React.Component {
 
     return (
       <div className="page-container recommendations-container">
-        <div className="page__title">Personalized recommendations:</div>
+        {name && (
+          <div className="page__title">
+            {name}, here are recommendations for you:
+          </div>
+        )}
         <div className={className}>{this.results}</div>
       </div>
     );
