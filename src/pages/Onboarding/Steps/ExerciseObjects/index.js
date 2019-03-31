@@ -1,5 +1,6 @@
 import React from "react";
 import { Form, Checkbox, Button } from "antd";
+import './index.css'
 
 const options = [
   "Broom",
@@ -47,6 +48,7 @@ class ExerciseObjects extends React.Component {
           {this.props.form.getFieldDecorator("objects", {
             rules: [{ required: true }]
           })(<Checkbox.Group options={options} />)}
+          <br />
           <Button type="primary" onClick={this.onSubmit}>
             Next
           </Button>

@@ -1,0 +1,23 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 10px 0 10px 0;
+}
+
+.list-item {
+    display: block;
+    flex-direction: column;
+    padding: 10px 0 10px 0;
+}
+
+/* .button {
+    margin: 20px 0;
+    border-radius: 20px;
+} */
