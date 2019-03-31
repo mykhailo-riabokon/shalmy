@@ -1,11 +1,11 @@
-.list {
+.radio-list {
     display: flex;
     flex-direction: column;
     align-content: center;
     padding: 10px 0 10px 0;
 }
 
-.list-item {
+.radio-list .list-item {
     display: block;
     flex-direction: column;
     padding: 10px 0 10px 0;

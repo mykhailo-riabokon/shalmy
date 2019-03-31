@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Radio, Button } from "antd";
-import './index.css'
+import "./index.css";
 
 class ExercisePlace extends React.Component {
   validate = () => {
@@ -27,11 +27,19 @@ class ExercisePlace extends React.Component {
             rules: [{ required: true }]
           })(
             <Radio.Group>
-              <div className="list">
-                <Radio className="list-item" value={1}>At home</Radio>
-                <Radio className="list-item" value={2}>Indoor sports halls</Radio>
-                <Radio className="list-item" value={3}>Anywhere outdoors</Radio>
-                <Radio className="list-item" value={4}>Does not really matter</Radio>
+              <div className="radio-list">
+                <Radio className="list-item" value={1}>
+                  At home
+                </Radio>
+                <Radio className="list-item" value={2}>
+                  Indoor sports halls
+                </Radio>
+                <Radio className="list-item" value={3}>
+                  Anywhere outdoors
+                </Radio>
+                <Radio className="list-item" value={4}>
+                  Does not really matter
+                </Radio>
               </div>
             </Radio.Group>
           )}

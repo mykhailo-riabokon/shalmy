@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Checkbox, Button } from "antd";
-import './index.css'
+import "./index.css";
 
 const options = [
   "Broom",
